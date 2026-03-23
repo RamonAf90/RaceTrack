@@ -1,0 +1,79 @@
+. 
+ ├── server
+ │   ├── index.js
+ │   ├── config.js
+ │   ├── db
+ │   │   └── connect.js
+ │   │   └── persist.js
+ │   ├── sockets
+ │   │   └── sockets.js
+ │   ├── routes
+ │   │   └── routes.js
+ │   ├── handlers
+ │   │   └── handlers.js
+ │   ├── models
+ │   │   └── models.js
+ │   └── utils
+ │        └── utils.js
+ ├── client
+ │   ├── static
+ │   │   ├── global.css
+ │   │   ├── global.js
+ │   │   ├── logo.png
+ │   │   ├── bg.png
+ │   │   ├── favicon.png
+ │   │   ├── finishFlag.jpg
+ │   │   └── mobileBG.png
+ │   ├── pages
+ │   │   ├── Home
+ │   │   │   ├── Home.html
+ │   │   │   ├── Home.css
+ │   │   │   └── Home.js
+ │   │   ├── Login
+ │   │   │   ├── Login.html
+ │   │   │   ├── Login.css
+ │   │   │   └── Login.js
+ │   │   ├── FrontDesk
+ │   │   │   ├── FrontDesk.html
+ │   │   │   ├── FrontDesk.css
+ │   │   │   └── FrontDesk.js
+ │   │   ├── RaceControl
+ │   │   │   ├── RaceControl.html
+ │   │   │   ├── RaceControl.css
+ │   │   │   └── RaceControl.js
+ │   │   ├── LapTracker
+ │   │   │   ├── LapTracker.html
+ │   │   │   ├── LapTracker.css
+ │   │   │   └── LapTracker.js
+ │   │   ├── LeaderBoardPage
+ │   │   │   ├── LeaderBoardPage.html
+ │   │   │   ├── LeaderBoardPage.css
+ │   │   │   └── LeaderBoardPage.js
+ │   │   ├── NextRacePage
+ │   │   │   ├── NextRacePage.html
+ │   │   │   ├── NextRacePage.css
+ │   │   │   └── NextRacePage.js
+ │   │   ├── CountdownPage
+ │   │   │   ├── CountdownPage.html
+ │   │   │   ├── CountdownPage.css
+ │   │   │   └── CountdownPage.js
+ │   │   └── FlagsPage
+ │   │        ├── FlagsPage.html
+ │   │        ├── FlagsPage.css
+ │   │        └── FlagsPage.js
+ │   ├── components
+ │   │   ├── RaceList
+ │   │   │   └── RaceList.js
+ │   │   ├── LeaderBoard
+ │   │   │   └── LeaderBoard.js
+ │   │   ├── Timer
+ │   │   │   └── Timer.js
+ │   │   └── FlagDisplay
+ │   │        └── FlagDisplay.js
+ │   ├── App.js
+ │   └── socket.js
+ ├── Makefile
+ ├── package.json
+ ├── .env
+ ├── .env.example
+ └── Readme.md
