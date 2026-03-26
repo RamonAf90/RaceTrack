@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Race Countdown</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css" />
+  <link rel="stylesheet" href="/client/pages/CountdownPage/CountdownPage.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Race Countdown</h1>
+    <div class="navBar">
+      <button onclick="goHome()">🏠 Home</button>
+      <button onclick="goBack()">⬅️ Back</button>
+    </div>
+    <!-- This ID matches your CSS -->
+    <div id="countdown">--:--</div>
+    <div id="statusText" aria-live="polite" style="padding: 0 0 40px; opacity: .85;"></div>
+  </div>
+
+  <!-- IMPORTANT: only load the official Socket.IO client + this page script -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client/pages/CountdownPage/CountdownPage.js"></script>
+  <script src="/static/global.js"></script> <!--full screen button-->
+  <script>
+    // Navigation helpers
+    function goHome() { window.location.href = "/"; }
+    function goBack() { window.history.back(); }
+  </script>
+</body>
+</html>
