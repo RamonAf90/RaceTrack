@@ -1,0 +1,104 @@
+
+/* ——— Base styles (Desktop) ——— */
+
+.board { 
+    max-width:1000px; 
+    margin:50px auto; 
+    padding:50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-radius:16px;
+    color: rgb(49, 43, 43);
+    font-size: 25px;
+}
+h1 {
+    padding: 50px 30px;
+}
+.navBar { 
+    display:flex; 
+    justify-content:center; 
+    gap:10px; 
+    margin-bottom:20px; 
+    padding: 0 0 50px 0;
+}
+
+#meta {
+    display:flex;
+    gap:20px;
+    align-items:center;
+}
+
+table { 
+    width:100%; 
+    border-collapse:collapse; 
+    margin-top:50px; 
+    background-color: rgba(148, 136, 136, 0.4);
+    border-radius: 8px;
+}
+th, td { 
+    padding:10px; 
+    border-bottom:1px solid #333; 
+    text-align:left; 
+}
+
+
+/* ——— Portrait mode (mobile & tablet) ——— */
+
+@media (orientation: portrait) {
+    body {
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+    }
+
+    .board {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        padding: 30px 0;
+        margin-bottom: 30px;
+    }
+
+    .navBar {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    .navBar button {
+        width: 80%;
+        font-size: 1rem;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    #meta {
+        font-size: 1rem;
+    }
+
+    table { 
+        width:90%; 
+        border-collapse:collapse; 
+        margin-top:30px; 
+        background-color: rgba(148, 136, 136, 0.4);
+        border-radius: 8px;
+        font-size: 0.9rem;
+    }
+
+    #fullscreenBtn {
+        display: none !important;
+    }
+}

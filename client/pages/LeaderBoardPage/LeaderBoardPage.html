@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Leader Board</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css" />
+  <link rel="stylesheet" href="/client/pages/LeaderBoardPage/LeaderBoardPage.css" />
+</head>
+<body>
+  <div class="board">
+    <h1>Leader Board</h1>
+    <div class="navBar">
+      <button onclick="goHome()">🏠 Home</button>
+      <button onclick="goBack()">⬅️ Back</button>
+    </div>
+
+    <div id="meta">
+      <div id="raceTitle"><strong>Session:</strong> —</div>
+      <div id="modeBadge"><strong>Mode:</strong> —</div>
+      <div id="timerText"><strong>Timer:</strong> —</div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:64px;">Pos</th>
+          <th style="width:80px;">Car</th>
+          <th>Driver</th>
+          <th style="width:120px;">Laps</th>
+          <th style="width:180px;">Best Lap</th>
+        </tr>
+      </thead>
+      <tbody id="lbBody">
+        <tr><td colspan="5" style="text-align:center; padding:20px;">Waiting for session…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- IMPORTANT: only load Socket.IO + this page script -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client/pages/LeaderBoardPage/LeaderBoardPage.js"></script>
+  <script src="/static/global.js"></script> <!--full screen button-->
+  <script>
+    function goHome() { window.location.href = "/"; }
+    function goBack() { window.history.back(); }
+  </script>
+</body>
+</html>
