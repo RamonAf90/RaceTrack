@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Lap-line Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css" />
+  <link rel="stylesheet" href="/client/pages/LapTracker/LapTracker.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Lap-line Tracker</h1>
+    <div class="navBar">
+      <button onclick="goHome()">🏠 Home</button>
+      <button onclick="goBack()">⬅️ Back</button>
+      <button id="logoutBtn" type="button">🚪 Log out</button>
+    </div>
+    <div id="sessionSelect"></div>
+    <div id="buttonsArea"></div>
+    <div id="note">Waiting for session…</div>
+
+    <div id="buttonsArea" aria-live="polite" aria-label="Lap buttons"></div>
+  </div>
+
+  <!-- IMPORTANT: only load Socket.IO and this page script -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client/pages/LapTracker/LapTracker.js"></script>
+  
+  <script>
+    function goHome() { window.location.href = "/"; }
+    function goBack() { window.history.back(); }
+    // quick logout
+    document.getElementById('logoutBtn')?.addEventListener('click', async () => {
+      await fetch('/api/logout', { method: 'POST' });
+      location.href = '/home';
+    });
+  </script>
+</body>
+</html>
