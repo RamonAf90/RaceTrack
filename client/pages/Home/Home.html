@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RaceTrack Home</title>
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css">
+  <link rel="stylesheet" href="/client/pages/Home/Home.css">
+</head>
+<body>
+  <h1>
+    <img src="/static/logo.png" alt="Racetrack Logo">
+    Beachside Racetrack
+  </h1>
+
+  <div class="menu">
+    <button onclick="goTo('/front-desk')">Front Desk</button>
+    <button onclick="goTo('/race-control')">Race Control</button>
+    <button onclick="goTo('/lap-line-tracker')">Lap Tracker</button>
+    <button onclick="goTo('/leader-board')">LeaderBoard</button>
+    <button onclick="goTo('/next-race')">Next Race</button>
+    <button onclick="goTo('/race-countdown')">Countdown</button>
+    <button onclick="goTo('/race-flags')">Flags</button>
+  </div>
+
+  <!-- If you have extra logic, keep Home.js; otherwise this inline helper is enough -->
+  <script src="/client/pages/Home/Home.js"></script>
+</body>
+</html>
