@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Front Desk</title>
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css" />
+  <link rel="stylesheet" href="/client/pages/FrontDesk/FrontDesk.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Front Desk</h1>
+    <div class="navBar">   <!-- Navigation Bar -->
+      <button onclick="goHome()">🏠 Home</button>
+      <button onclick="goBack()">⬅️ Back</button>
+      <button id="logoutBtn">🚪 Log out</button>
+    </div>
+   
+    <section class="races-section">
+      <h2>Races</h2>
+      <ul id="raceList"></ul>
+      <button id="addRaceBtn">➕ Add Race</button>
+    </section>
+
+    <section class="drivers-section" style="display: none;">
+      <h2>Drivers for <span id="selectedRaceName"></span></h2>
+      <ul id="driverList"></ul>
+      <button id="addDriverBtn">➕ Add Driver</button>
+    </section>
+
+    <div id="formModal" class="modal hidden">
+      <div class="modal-content">
+        <h3 id="formTitle"></h3>
+        <form id="formArea"></form>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client/pages/FrontDesk/FrontDesk.js"></script>
+  <script>
+    // Navigation helpers
+    function goHome() {
+      window.location.href = "../Home/Home.html"; 
+    }
+    function goBack() {
+      window.history.back();
+    }
+    // Log out button
+    document.getElementById('logoutBtn')?.addEventListener('click', async () => {
+    await fetch('/api/logout', { method: 'POST' });  
+    window.location.href = '/home';
+    });
+  </script>
+</body>
+</html>
