@@ -1,0 +1,121 @@
+
+/* ——— Base (Desktop) ——— */
+
+.login-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.login-container h1 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.login-container label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.login-container input,
+.login-container select {
+  width: 80%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 79, 250, 0.3);;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  color: #744b00;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.error-msg {
+  margin-top: 15px;
+  color: red;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.navBar { 
+  display:flex; 
+  justify-content:center; 
+  gap:10px; 
+  margin-bottom:20px; 
+  padding: 50px 0;
+}
+
+/* ——— Portrait mode (mobile & tablet unified) ——— */
+@media (orientation: portrait) {
+
+  .login-container {
+    width: 85%;
+    height: auto;
+    margin: 80px auto;
+    padding: 45px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    text-align: center;
+  }
+
+  .login-container h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+  }
+
+  .login-container label {
+    display: block;
+    font-size: 1.95rem;
+    margin-top: 50px;
+  }
+
+  .login-container input,
+  .login-container select {
+    width: 80%;
+    height: auto;
+    padding: 12px;
+    font-size: 1.95rem;
+  }
+
+  .login-container button {
+    padding: 25px;
+    font-size: 2rem;
+    border-radius: 10px;
+    margin: 100px 0 0 0;
+  }
+
+  .navBar {
+    width: 30%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    padding: 30px 0;
+  }
+}

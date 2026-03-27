@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>🔑 Login</title>
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css" />
+  <link rel="stylesheet" href="/client/pages/Login/Login.css" />
+</head>
+<body>
+  <div class="navBar">   <!-- Navigation Bar -->
+    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="goBack()">⬅️ Back</button>
+  </div>
+  <div class="login-container">
+    <h1>🏁 Access Portal</h1>
+    <form id="loginForm">
+      <label for="role">Role</label>
+      <select id="role" required>
+        <option value="">-- Select Role --</option>
+        <option value="receptionist">Receptionist</option>
+        <option value="observer">Observer</option>
+        <option value="safety">Safety</option>
+      </select>
+
+      <label for="accessKey">Access Key</label>
+      <input type="password" id="accessKey" placeholder="Enter Access Key" required />
+
+      <button type="submit">Login</button>
+    </form>
+    <p id="errorMsg" class="error-msg hidden">Invalid key, please try again.</p>
+  </div>
+
+  <script src="/client/pages/Login/Login.js"></script>
+  <script>
+    function goHome() { window.location.href = "/"; }
+    function goBack() { window.history.back(); }
+  </script>
+</body>
+</html>
