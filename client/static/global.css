@@ -1,0 +1,153 @@
+/* Importing the Orbitron font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+/* Global styles for all pages */
+
+body {
+  font-family: 'Orbitron', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: url("../static/bg.jpg");
+  background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 80vh;
+}
+
+.container {
+  width: 1000px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin: 40px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #ade8f0, #dfa2fc, #ffe4b5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s infinite alternate, glowIn 2s ease-out forwards;
+  letter-spacing: 2px;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes glowIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    text-shadow: none;
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+    text-shadow: 0 0 25px #ff00cc, 0 0 50px #3333ff;
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 40px #01ffd0, 0 0 45px #ff00cc;
+  }
+}
+
+.navBar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.navBar button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 6px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.navBar button:hover {
+  background-color: #555;
+}
+
+button {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  color: rgb(82, 66, 81);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  font-family: inherit;
+}
+
+button:hover {
+  color: #744b00;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  pointer-events: none;
+}
+button:disabled:hover {
+  background: inherit;
+}
+
+/* ——— Portrait mode (mobile & tablet) ——— */
+@media (orientation: portrait) {
+  body {
+    background-image: url("../static/mobileBG.jpg");
+    background-attachment: scroll;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .navBar {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .navBar button {
+    width: 80%;
+    font-size: 1rem;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 12px 18px;
+  }
+}
