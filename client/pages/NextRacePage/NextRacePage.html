@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Next Race</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css" />
+  <link rel="stylesheet" href="/client/pages/NextRacePage/NextRacePage.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Next Race</h1>
+    <div class="navBar">
+      <button onclick="goHome()">🏠 Home</button>
+      <button onclick="goBack()">⬅️ Back</button>
+    </div>
+
+    <div id="nextInfo">
+      <div id="raceTitle"><strong>Session:</strong> —</div>
+      <!-- Keep empty; JS will show/hide this based on state -->
+      <div id="notice" style="opacity:.85; display:none;">
+        <em>If your name is listed, please proceed to the paddock.</em>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th style="width:80px;">Car</th>
+          <th>Driver</th>
+        </tr>
+      </thead>
+      <tbody id="nrBody">
+        <tr><td colspan="2" style="text-align:center; padding:20px;">Waiting for next session…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client/pages/NextRacePage/NextRacePage.js"></script>
+  <script src="/static/global.js"></script> <!--full screen button-->
+  <script>
+    // Navigation helpers
+    function goHome() { window.location.href = "/"; }
+    function goBack() { window.history.back(); }
+  </script>
+</body>
+</html>

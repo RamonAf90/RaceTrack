@@ -1,0 +1,115 @@
+
+/* ——— Base styles (Desktop) ——— */
+
+.wrap{ 
+    max-width:1000px; 
+    margin:20px auto; 
+    padding:20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px);
+    border-radius:16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 { 
+    padding: 50px 30px;
+}
+
+.navBar { 
+    display:flex; 
+    justify-content:center; 
+    gap:10px; 
+    margin-bottom:20px; 
+    padding: 0 0 50px 0;
+}
+
+#nextInfo{ 
+    font-size:18px; 
+    margin-bottom:10px;
+    display:flex;
+    justify-content: center; 
+    padding: 20px;
+}
+
+table{ 
+    background: rgba(255, 255, 255, 0.5);
+    width: 600px;
+    color:#3a3333;
+    padding:12px;
+    border-radius:8px;
+}
+
+thead tr{ 
+    padding:8px;
+    border-bottom:1px solid #ddd; 
+    display:flex; 
+    justify-content: space-between;
+    gap: 600px;
+}
+
+#nrBody tr{ 
+    padding:8px;
+    border-bottom:1px solid #ddd; 
+    display:flex; 
+    justify-content: space-between;
+    gap: 600px;
+}
+
+/* ——— Portrait mode (mobile & tablet) ——— */
+
+@media (orientation: portrait) {
+    .wrap {
+        width: 90%;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end; 
+        align-items: center;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    h1 {
+        font-size: 3rem;
+        padding: 30px 0;
+        margin-bottom: 30px;
+    }
+
+    .navBar {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 25px;
+    }
+
+    #nextInfo{ 
+        font-size: 1.5rem; 
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    table{ 
+        width: 80%;
+        font-size: 1.5rem; 
+    }
+
+    thead tr{
+        width: 90%;
+        gap: 0;
+    }
+
+    #nrBody tr{
+        width: 90%;
+        gap: 0;
+    }
+
+    #fullscreenBtn {
+        display: none !important;
+    }
+}
