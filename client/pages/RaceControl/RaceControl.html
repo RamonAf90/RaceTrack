@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Race Control</title>
+  <link rel="icon" type="image/png" href="/static/favicon.png">
+  <link rel="stylesheet" href="/static/global.css" />
+  <link rel="stylesheet" href="/client/pages/RaceControl/RaceControl.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Race Control</h1>
+    <div class="navBar">
+      <button onclick="goHome()">🏠 Home</button>
+      <button onclick="goBack()">⬅️ Back</button>
+      <button id="logoutBtn" type="button">🚪 Log out</button>
+    </div>
+
+    <section>
+      <div id="status">Mode: — • Status: —</div>
+      <div id="timer">Timer: —</div>
+    </section>
+
+    <!-- PRE-START: Only Start Race -->
+    <section data-phase="pre">
+      <h2>Ready</h2>
+      <button id="startRace" type="button">▶️ Start Race</button>
+    </section>
+
+    <!-- RUNNING: 4 mode buttons (incl. Finish) -->
+    <section data-phase="run" style="display:none">
+      <h2>Controls</h2>
+      <div class="modes">
+        <button id="modeSafe"   type="button">Safe (Green)</button>
+        <button id="modeHazard" type="button">Hazard (Yellow)</button>
+        <button id="modeDanger" type="button">Danger (Red)</button>
+        <button id="modeFinish" type="button">Finish (Chequered)</button>
+      </div>
+    </section>
+
+    <!-- FINISHED: only End Session -->
+    <section data-phase="post" style="display:none">
+      <h2>Finished</h2>
+      <button id="endSession" type="button">🛑 End Session</button>
+    </section>
+
+    <section>
+      <h2>Current Drivers</h2>
+      <ul id="currentDrivers"></ul>
+    </section>
+
+    <p id="error" class="error"></p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client/pages/RaceControl/RaceControl.js"></script>
+
+  <script>
+    function goHome() { window.location.href = "/"; }
+    function goBack() { window.history.back(); }
+    document.getElementById('logoutBtn')?.addEventListener('click', async () => {
+      await fetch('/api/logout', { method: 'POST' });
+      location.href = '/home';
+    });
+  </script>
+</body>
+</html>
